@@ -1,0 +1,33 @@
+<svg width="520" height="360" viewBox="0 0 520 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="44" x2="456" y2="316" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EEF3F5"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="106" y1="151" x2="422" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFC"/>
+      <stop offset="0.32" stop-color="#AFBAC2"/>
+      <stop offset="0.58" stop-color="#FDFEFE"/>
+      <stop offset="1" stop-color="#6F7A83"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="360" rx="8" fill="url(#bg)"/>
+  <path d="M68 254C154 199 310 206 452 247" stroke="#DCE5EA" stroke-width="3" stroke-dasharray="9 12"/>
+  <g filter="url(#shadow)">
+    <path d="M96 172L379 110L446 181L161 253L96 172Z" fill="#D6DEE3"/>
+    <path d="M126 169L374 116L420 176L169 238L126 169Z" fill="url(#steel)"/>
+    <path d="M153 175L376 128" stroke="#66717A" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 13"/>
+    <path d="M169 203L394 150" stroke="#FCFFFF" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M145 224L391 161" stroke="#707B84" stroke-width="5" stroke-linecap="round" opacity="0.48"/>
+    <path d="M96 172L161 253L161 277L96 196V172Z" fill="#AEB8C0"/>
+    <path d="M161 253L446 181V205L161 277V253Z" fill="#7F8B94"/>
+  </g>
+  <circle cx="110" cy="82" r="24" fill="#F9072F" opacity="0.12"/>
+  <circle cx="110" cy="82" r="8" fill="#F9072F"/>
+  <text x="140" y="88" fill="#24292D" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">Edelstahl C15</text>
+  <defs>
+    <filter id="shadow" x="70" y="88" width="402" height="218" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#59636B" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+</svg>

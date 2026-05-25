@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mainContent from "../content/pages/about.html?raw";
+---
+
+<BaseLayout
+  title={"Company | Duschrinnen Profi"}
+  description={"Unternehmen, Service und Produktfokus von Duschrinnen Profi für Duschrinnen, Abläufe und Fliesenzubehör."}
+  page={"company"}
+  ogTitle={"Company | Duschrinnen Profi"}
+  ogDescription={"Unternehmen, Service und Produktfokus von Duschrinnen Profi für Duschrinnen, Abläufe und Fliesenzubehör."}
+>
+  <main id="main" set:html={mainContent}></main>
+</BaseLayout>

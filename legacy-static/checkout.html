@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Checkout | Duschrinnen Profi</title>
+    <meta
+      name="description"
+      content="Checkout für Duschrinnen Profi mit Warenkorb, Bestellübersicht und minimaler Glasoptik."
+    />
+    <link rel="icon" type="image/webp" href="assets/dp-logo-original.webp" />
+    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="styles.css?v=20260521-font-reset" />
+    <script defer src="main.js?v=20260521-font-reset"></script>
+  </head>
+  <body data-page="checkout">
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+    <header class="site-header" data-header>
+      <div class="service-bar" aria-label="Service Hinweise">
+        <div class="service-bar-track">
+          <div class="service-strip">
+            <a class="service-pill" href="mailto:info@duschrinnen-profi.de"><i data-lucide="mail" aria-hidden="true"></i>info@duschrinnen-profi.de</a>
+            <span class="service-pill" data-service-shipping><i data-lucide="truck" aria-hidden="true"></i>DHL Lieferung in 1-2 Werktagen</span>
+            <span class="service-pill" data-service-payment><i data-lucide="shield-check" aria-hidden="true"></i>Rechnungskauf, PayPal &amp; Giropay</span>
+          </div>
+          <div class="service-strip" aria-hidden="true">
+            <span class="service-pill"><i data-lucide="mail" aria-hidden="true"></i>info@duschrinnen-profi.de</span>
+            <span class="service-pill" data-service-shipping><i data-lucide="truck" aria-hidden="true"></i>DHL Lieferung in 1-2 Werktagen</span>
+            <span class="service-pill" data-service-payment><i data-lucide="shield-check" aria-hidden="true"></i>Rechnungskauf, PayPal &amp; Giropay</span>
+          </div>
+        </div>
+      </div>
+      <div class="nav-shell">
+        <a class="brand" href="index.html" aria-label="Duschrinnen Profi Startseite"><img src="assets/dp-logo-original.webp" alt="Duschrinnen Profi" /></a>
+        <button class="icon-button menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Navigation öffnen"><i data-lucide="menu" aria-hidden="true"></i></button>
+        <div class="nav-panel">
+          <div class="nav-row">
+            <nav class="site-nav" data-nav aria-label="Hauptnavigation">
+              <details class="nav-dropdown nav-dropdown-products" data-nav-link="sortiment">
+                <summary><span data-nav-label="productsMenu">Badprodukte</span><i data-lucide="chevron-down" aria-hidden="true"></i></summary>
+                <div class="nav-dropdown-menu nav-dropdown-menu-wide">
+                  <a href="sortiment.html#edelstahl" data-nav-sub="stainless">Edelstahl Duschrinnen</a>
+                  <a href="sortiment.html#befliesbar" data-nav-sub="tileable">Befliesbare Duschrinnen</a>
+                  <a href="sortiment.html#ersatzteile" data-nav-sub="spareParts">Duschrinnen-Ersatzteile</a>
+                  <a href="sortiment.html#bodenablauf" data-nav-sub="floorDrains">Bodenabläufe</a>
+                  <a href="sortiment.html#ablagen" data-nav-sub="showerShelves">Duschablagen</a>
+                  <a href="sortiment.html#matrix" data-nav-sub="matrix">Diamant Bohrkronen Matrix</a>
+                  <a href="sortiment.html#diamant-bohrkronen" data-nav-sub="diamondCrowns">Diamant Bohrkronen</a>
+                  <a href="sortiment.html#diamant-bohrkronen-set" data-nav-sub="diamondCrownsSet">Diamant Bohrkronen Set</a>
+                  <a href="sortiment.html#fliesenschienen" data-nav-sub="tileTrims">Fliesenschienen</a>
+                  <a href="sortiment.html#nivelliersystem" data-nav-sub="leveling">Nivelliersystem</a>
+                  <a href="sortiment.html#diamanttrennscheibe-115" data-nav-sub="disc115">Diamanttrennscheibe 115</a>
+                  <a href="sortiment.html#diamanttrennscheibe-125" data-nav-sub="disc125">Diamanttrennscheibe 125</a>
+                </div>
+              </details>
+              <form class="nav-search" data-inline-search role="search" action="sortiment.html">
+                <i data-lucide="search" aria-hidden="true"></i>
+                <input type="search" data-inline-search-input placeholder="Produkte, Blog oder Tipps suchen..." aria-label="Produkte, Blog oder Tipps suchen" autocomplete="off" />
+                <div class="search-results nav-search-results" data-inline-search-results></div>
+              </form>
+              <a href="about.html" data-nav-link="company">Unternehmen</a>
+              <a href="for-you.html" data-nav-link="inspiration">Inspiration</a>
+              <details class="nav-dropdown" data-nav-link="blog">
+                <summary><span data-nav-label="blogMenu">Blog</span><i data-lucide="chevron-down" aria-hidden="true"></i></summary>
+                <div class="nav-dropdown-menu">
+                  <a href="https://www.facebook.com/duschrinnen-profide-118783021957464/" target="_blank" rel="noreferrer">Facebook</a>
+                  <a href="https://www.instagram.com/explore/tags/bathroomdesign/" target="_blank" rel="noreferrer">Instagram</a>
+                  <a href="blog.html" data-nav-sub="journal">Blog</a>
+                </div>
+              </details>
+              <a href="mein-konto.html" data-nav-link="account">Mein Konto</a>
+            </nav>
+            <div class="nav-actions">
+              <label class="language-control" aria-label="Sprache wählen">
+                <i data-lucide="globe-2" aria-hidden="true"></i>
+                <select data-language-select>
+                  <option value="de">DE</option>
+                  <option value="en">EN</option>
+                  <option value="fr">FR</option>
+                  <option value="tr">TR</option>
+                  <option value="ru">RU</option>
+                  <option value="es">ES</option>
+                </select>
+              </label>
+              <button class="icon-button theme-button" type="button" data-theme-toggle aria-label="Dark mode" aria-pressed="false"><i data-lucide="moon" aria-hidden="true"></i></button>
+              <a class="icon-button cart-button" href="checkout.html" data-cart aria-label="Warenkorb"><i data-lucide="shopping-cart" aria-hidden="true"></i><span data-cart-count>0</span></a>
+              <a class="button button-small" href="kontakt.html"><i data-lucide="messages-square" aria-hidden="true"></i>Beratung</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="checkout-page" data-checkout-page>
+      <section class="section-band checkout-hero">
+        <div class="layout checkout-hero-copy" data-reveal>
+          <p class="eyebrow">Checkout</p>
+          <h1>Bestellung ruhig, klar und ohne Umwege vorbereiten.</h1>
+          <p>
+            Ihr Warenkorb bleibt gespeichert. Passen Sie Mengen an, kontrollieren Sie die Summe und senden Sie die
+            Anfrage mit allen Daten direkt an das Team von Duschrinnen Profi.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-band checkout-shell-band">
+        <div class="layout checkout-grid">
+          <section class="checkout-panel checkout-order" data-reveal>
+            <div class="checkout-panel-head">
+              <div>
+                <p class="eyebrow">Warenkorb</p>
+                <h2>Ihre Auswahl</h2>
+              </div>
+              <span class="checkout-count-badge"><strong data-checkout-count>0</strong> Artikel</span>
+            </div>
+
+            <div class="checkout-empty" data-checkout-empty hidden>
+              <h3>Ihr Warenkorb ist noch leer.</h3>
+              <p>Fügen Sie Produkte aus dem Sortiment hinzu, dann erscheint hier Ihre Bestellübersicht.</p>
+              <a class="button button-primary" href="sortiment.html">
+                <i data-lucide="arrow-right" aria-hidden="true"></i>
+                Zum Sortiment
+              </a>
+            </div>
+
+            <div class="checkout-list" data-checkout-list></div>
+          </section>
+
+          <div class="checkout-side">
+            <aside class="checkout-panel checkout-summary" data-reveal>
+              <div class="checkout-panel-head checkout-panel-head-compact">
+                <div>
+                  <p class="eyebrow">Übersicht</p>
+                  <h2>Kosten</h2>
+                </div>
+              </div>
+
+              <div class="checkout-summary-rows">
+                <div class="checkout-summary-row">
+                  <span>Zwischensumme</span>
+                  <strong data-checkout-subtotal>0,00 €</strong>
+                </div>
+                <div class="checkout-summary-row">
+                  <span>Versand</span>
+                  <strong data-checkout-shipping>-</strong>
+                </div>
+                <div class="checkout-summary-row checkout-summary-total">
+                  <span>Gesamt</span>
+                  <strong data-checkout-total>0,00 €</strong>
+                </div>
+              </div>
+
+              <p class="checkout-summary-note" data-checkout-shipping-note>
+                Legen Sie Produkte in den Warenkorb, um Lieferkosten und Gesamtsumme zu sehen.
+              </p>
+
+              <div class="checkout-meta">
+                <span class="checkout-meta-pill">
+                  <i data-lucide="truck" aria-hidden="true"></i>
+                  DHL 1-2 Werktage
+                </span>
+                <span class="checkout-meta-pill">
+                  <i data-lucide="shield-check" aria-hidden="true"></i>
+                  Klarna, PayPal &amp; Giropay
+                </span>
+              </div>
+            </aside>
+
+            <form class="checkout-panel checkout-form-panel" data-checkout-form data-reveal>
+              <div class="checkout-panel-head checkout-panel-head-compact">
+                <div>
+                  <p class="eyebrow">Anfrage</p>
+                  <h2>Liefer- und Kontaktdaten</h2>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <label>Name
+                  <input name="name" type="text" placeholder="Max Mustermann" required />
+                </label>
+                <label>E-Mail
+                  <input name="email" type="email" placeholder="max@example.de" required />
+                </label>
+              </div>
+
+              <div class="field-row">
+                <label>Telefon
+                  <input name="phone" type="tel" placeholder="+49 170 0000000" />
+                </label>
+                <label>PLZ / Ort
+                  <input name="postal" type="text" placeholder="10115 Berlin" />
+                </label>
+              </div>
+
+              <fieldset class="checkout-payment-group">
+                <legend>Zahlungsart</legend>
+                <label class="checkout-payment-option">
+                  <input type="radio" name="payment" value="Rechnungskauf" checked />
+                  <span>Rechnungskauf</span>
+                </label>
+                <label class="checkout-payment-option">
+                  <input type="radio" name="payment" value="Klarna" />
+                  <span>Klarna</span>
+                </label>
+                <label class="checkout-payment-option">
+                  <input type="radio" name="payment" value="PayPal" />
+                  <span>PayPal</span>
+                </label>
+                <label class="checkout-payment-option">
+                  <input type="radio" name="payment" value="Kreditkarte" />
+                  <span>Kreditkarte</span>
+                </label>
+                <label class="checkout-payment-option">
+                  <input type="radio" name="payment" value="Online-Überweisung" />
+                  <span>Online-Überweisung</span>
+                </label>
+                <label class="checkout-payment-option">
+                  <input type="radio" name="payment" value="Giropay" />
+                  <span>Giropay</span>
+                </label>
+                <p class="checkout-summary-note">
+                  Wie im Original-Shop: Rechnungskauf sowie PayPal mit Kreditkarte, Online-Überweisung oder Giropay.
+                </p>
+              </fieldset>
+
+              <label>Notizen zur Bestellung
+                <textarea
+                  name="notes"
+                  rows="5"
+                  placeholder="Lieferhinweis, gewünschte Rückfragezeit oder Projektinfo ergänzen..."
+                ></textarea>
+              </label>
+
+              <p class="form-note" data-checkout-form-note></p>
+
+              <div class="checkout-form-actions">
+                <a class="button button-ghost dark" href="sortiment.html">
+                  <i data-lucide="arrow-left" aria-hidden="true"></i>
+                  Weiter einkaufen
+                </a>
+                <button class="button button-primary" type="submit" data-checkout-submit>
+                  <i data-lucide="send" aria-hidden="true"></i>
+                  Bestellanfrage vorbereiten
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" id="site-footer">
+      <div class="layout footer-grid">
+        <div class="footer-brand">
+          <a class="footer-brand-mark" href="index.html" aria-label="Duschrinnen Profi Startseite">
+            <img class="footer-logo" src="assets/dp-logo-original.webp" alt="Duschrinnen Profi" />
+          </a>
+          <p class="footer-note">Aufregendes Design trifft gehobene Qualit&auml;t!</p>
+          <img class="footer-payments" src="assets/original/2022-09-payment-icons.svg" alt="Klarna, PayPal, Visa und Mastercard" />
+        </div>
+        <nav class="footer-menu" aria-label="Footer Shop">
+          <a href="index.html">Duschrinnen Profi</a>
+          <a href="blog.html">Blog</a>
+          <a href="sortiment.html#befliesbar">Befliesbare Duschrinnen</a>
+          <a href="sortiment.html#edelstahl">Edelstahl Duschrinnen</a>
+          <a href="sortiment.html#ersatzteile">Duschrinnen-Ersatzteile</a>
+          <a href="ratgeber.html">Ratgeber</a>
+          <a href="sortiment.html#duschablaufrinne">Duschablaufrinne</a>
+          <a href="sortiment.html#diamant-bohrkronen">Diamantbohrkronen</a>
+          <a href="sortiment.html#diamanttrennscheibe-115">Diamanttrennscheibe</a>
+        </nav>
+        <nav class="footer-menu" aria-label="Footer Rechtliches">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="mein-konto.html">Mein Konto</a>
+          <a href="widerrufsbelehrung.html">Widerrufsbelehrung</a>
+          <a href="allgemeine-geschaeftsbedingungen.html">Allgemeine Gesch&auml;ftsbedingungen</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutzerkl&auml;rung</a>
+        </nav>
+      </div>
+      <div class="footer-bottom layout">
+        <span>Copyright 2026 Duschrinnen Profi</span>
+        <span>Webdesign by <a href="https://lorenz-digital-solutions.de/" target="_blank" rel="noreferrer">Lorenz Digital Solutions</a></span>
+      </div>
+    </footer>
+
+    <div class="search-modal" data-search-modal aria-hidden="true">
+      <div class="search-panel" role="dialog" aria-modal="true" aria-label="Produktsuche">
+        <button class="icon-button" type="button" data-close-search aria-label="Suche schließen">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+        <label>
+          Produktsuche
+          <input type="search" placeholder="Duschrinne, Siphon, Bohrkrone..." data-search-input />
+        </label>
+        <div class="search-results" data-search-results></div>
+      </div>
+    </div>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+  </body>
+</html>

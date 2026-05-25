@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mainContent from "../content/pages/impressum.html?raw";
+---
+
+<BaseLayout
+  title={"Impressum | Duschrinnen Profi"}
+  description={"Impressum und Anbieterkennzeichnung von Duschrinnen Profi."}
+  page={"legal"}
+  ogTitle={"Impressum | Duschrinnen Profi"}
+  ogDescription={"Impressum und Anbieterkennzeichnung von Duschrinnen Profi."}
+>
+  <main id="main" set:html={mainContent}></main>
+</BaseLayout>

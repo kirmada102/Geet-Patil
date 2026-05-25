@@ -1,0 +1,25 @@
+<svg width="520" height="360" viewBox="0 0 520 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="58" y1="30" x2="450" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F3F7F8"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="167" y1="92" x2="338" y2="267" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDFEFE"/>
+      <stop offset="0.26" stop-color="#89949D"/>
+      <stop offset="0.52" stop-color="#E9EEF1"/>
+      <stop offset="1" stop-color="#5E6870"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="360" rx="8" fill="url(#bg3)"/>
+  <path d="M164 88L314 132L366 274L212 230L164 88Z" fill="#CDD7DD"/>
+  <path d="M188 113L300 146L338 249L224 216L188 113Z" fill="url(#metal)"/>
+  <ellipse cx="245" cy="130" rx="65" ry="23" transform="rotate(17 245 130)" fill="#30363B"/>
+  <ellipse cx="245" cy="130" rx="43" ry="13" transform="rotate(17 245 130)" fill="#F3F8FA"/>
+  <path d="M211 148L319 180M220 177L329 209M230 205L337 236" stroke="#FFFFFF" stroke-width="4" opacity="0.7"/>
+  <path d="M174 231L91 257" stroke="#F9072F" stroke-width="10" stroke-linecap="round"/>
+  <path d="M184 241L119 292" stroke="#6D7881" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="104" cy="82" r="24" fill="#F9072F" opacity="0.14"/>
+  <path d="M94 90L114 72" stroke="#F9072F" stroke-width="6" stroke-linecap="round"/>
+  <text x="140" y="88" fill="#24292D" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">Diamant Bohrkrone</text>
+</svg>

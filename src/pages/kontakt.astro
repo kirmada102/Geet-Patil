@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mainContent from "../content/pages/kontakt.html?raw";
+---
+
+<BaseLayout
+  title={"Kontakt | Duschrinnen Profi"}
+  description={"Kontakt und Beratung f&uuml;r Duschrinnen, Bodenabl&auml;ufe und Fliesenzubeh&ouml;r."}
+  page={"kontakt"}
+  ogTitle={"Kontakt | Duschrinnen Profi"}
+  ogDescription={"Kontakt und Beratung f&uuml;r Duschrinnen, Bodenabl&auml;ufe und Fliesenzubeh&ouml;r."}
+>
+  <main id="main" set:html={mainContent}></main>
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mainContent from "../content/pages/index.html?raw";
+---
+
+<BaseLayout
+  title={"Duschrinnen Profi | Moderne Duschrinnen, Abl&auml;ufe &amp; Fliesenzubeh&ouml;r"}
+  description={"Duschrinnen Profi f&uuml;hrt Duschrinnen, Bodenabl&auml;ufe, Ersatzteile, Duschablagen und Fliesenzubeh&ouml;r mit schneller Lieferung."}
+  page={"home"}
+  ogTitle={"Duschrinnen Profi | Badtechnik modern kaufen"}
+  ogDescription={"Duschrinnen Profi f&uuml;hrt Duschrinnen, Bodenabl&auml;ufe, Ersatzteile, Duschablagen und Fliesenzubeh&ouml;r mit schneller Lieferung."}
+  preloadImage={"/assets/original/2022-09-bg-hero-3-640.jpg"}
+  preloadSrcSet={"/assets/original/2022-09-bg-hero-3-640.jpg 640w, /assets/original/2022-09-bg-hero-3-960.jpg 960w, /assets/original/2022-09-bg-hero-3-1280.jpg 1280w"}
+  preloadSizes={"(max-width: 900px) 100vw, 52vw"}
+>
+  <main id="main" set:html={mainContent}></main>
+</BaseLayout>

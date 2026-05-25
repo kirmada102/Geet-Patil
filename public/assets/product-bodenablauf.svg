@@ -1,0 +1,23 @@
+<svg width="520" height="360" viewBox="0 0 520 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg5" x1="42" y1="40" x2="470" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F3F0ED"/>
+    </linearGradient>
+    <linearGradient id="drain" x1="166" y1="102" x2="352" y2="278" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDFEFE"/>
+      <stop offset="0.31" stop-color="#9AA5AE"/>
+      <stop offset="0.61" stop-color="#EEF3F5"/>
+      <stop offset="1" stop-color="#6A747D"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="360" rx="8" fill="url(#bg5)"/>
+  <path d="M96 228L279 96L425 166L242 302L96 228Z" fill="#E2E8EA"/>
+  <path d="M169 217L280 137L354 175L244 257L169 217Z" fill="url(#drain)"/>
+  <path d="M204 217L278 163M226 229L303 174M248 240L324 187" stroke="#343A40" stroke-width="5" stroke-linecap="round"/>
+  <path d="M169 217L244 257V275L169 235V217Z" fill="#89949D"/>
+  <path d="M244 257L354 175V192L244 275V257Z" fill="#68727B"/>
+  <circle cx="104" cy="82" r="24" fill="#F9072F" opacity="0.14"/>
+  <rect x="94" y="72" width="20" height="20" rx="4" fill="#F9072F"/>
+  <text x="140" y="88" fill="#24292D" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">Bodenablauf</text>
+</svg>

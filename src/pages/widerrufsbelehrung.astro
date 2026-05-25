@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mainContent from "../content/pages/widerrufsbelehrung.html?raw";
+---
+
+<BaseLayout
+  title={"Widerrufsbelehrung | Duschrinnen Profi"}
+  description={"Widerrufsbelehrung von Duschrinnen Profi f&uuml;r Online-Bestellungen und Retouren."}
+  page={"legal"}
+  ogTitle={"Widerrufsbelehrung | Duschrinnen Profi"}
+  ogDescription={"Widerrufsbelehrung von Duschrinnen Profi f&uuml;r Online-Bestellungen und Retouren."}
+>
+  <main id="main" set:html={mainContent}></main>
+</BaseLayout>

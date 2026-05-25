@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mainContent from "../content/pages/for-you.html?raw";
+---
+
+<BaseLayout
+  title={"Inspiration | Duschrinnen Profi"}
+  description={"Inspiration für Walk-in Duschen, Bodenabläufe und ruhigere Badgestaltung mit den Originalbildern von Duschrinnen Profi."}
+  page={"inspiration"}
+  ogTitle={"Inspiration | Duschrinnen Profi"}
+  ogDescription={"Inspiration für Walk-in Duschen, Bodenabläufe und ruhigere Badgestaltung mit den Originalbildern von Duschrinnen Profi."}
+>
+  <main id="main" set:html={mainContent}></main>
+</BaseLayout>

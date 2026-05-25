@@ -1,0 +1,16 @@
+.DS_Store
+.swift-module-cache/
+node_modules/
+.astro/
+.next/
+out/
+dist/
+coverage/
+*.log
+*.tmp
+
+# Legacy local assets from the previous prototype in this folder.
+assets/geet-patil-cutout.png
+assets/geet-patil-photo.jpeg
+assets/geet-preview.png
+assets/orenva-logo.png

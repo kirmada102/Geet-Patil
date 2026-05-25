@@ -1,0 +1,88 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SearchModal from "../components/SearchModal.astro";
+import mainScriptUrl from "../scripts/main.js?url";
+
+const {
+  title,
+  description = "",
+  page = "",
+  ogTitle = title,
+  ogDescription = description,
+  preloadImage = "",
+  preloadSrcSet = "",
+  preloadSizes = ""
+} = Astro.props;
+
+const htmlEntityMap = {
+  "&auml;": "\u00e4",
+  "&Auml;": "\u00c4",
+  "&ouml;": "\u00f6",
+  "&Ouml;": "\u00d6",
+  "&uuml;": "\u00fc",
+  "&Uuml;": "\u00dc",
+  "&szlig;": "\u00df",
+  "&amp;": "&"
+};
+
+function decodeEntities(value = "") {
+  return value.replace(/&(auml|Auml|ouml|Ouml|uuml|Uuml|szlig|amp);/g, (match) => htmlEntityMap[match] || match);
+}
+
+const pageTitle = decodeEntities(title);
+const pageDescription = decodeEntities(description);
+const pageOgTitle = decodeEntities(ogTitle);
+const pageOgDescription = decodeEntities(ogDescription);
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || "";
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL || "";
+const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY || "";
+const metaBase = siteUrl || Astro.url.origin;
+const canonicalUrl = new URL(Astro.url.pathname, metaBase).toString();
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <base href="/" />
+    <title>{pageTitle}</title>
+    {pageDescription && <meta name="description" content={pageDescription} />}
+    {pageOgTitle && <meta property="og:title" content={pageOgTitle} />}
+    {pageOgDescription && <meta property="og:description" content={pageOgDescription} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/png" sizes="256x256" href="/assets/dp-mark.png" />
+    <link rel="apple-touch-icon" href="/assets/dp-mark.png" />
+    {preloadImage && (
+      <link
+        rel="preload"
+        as="image"
+        href={preloadImage}
+        imagesrcset={preloadSrcSet || undefined}
+        imagesizes={preloadSizes || undefined}
+      />
+    )}
+    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <script
+      is:inline
+      set:html={`window.__SITE_CONFIG__ = ${JSON.stringify({
+        siteUrl,
+        supabaseUrl,
+        supabaseAnonKey
+      })};`}
+    ></script>
+    <script type="module" src={mainScriptUrl}></script>
+  </head>
+  <body data-page={page}>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+    <SiteHeader />
+    <slot />
+    <SiteFooter />
+    <SearchModal />
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+  </body>
+</html>

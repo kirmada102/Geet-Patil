@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mainContent from "../content/pages/faq.html?raw";
+---
+
+<BaseLayout
+  title={"FAQ | Duschrinnen Profi"}
+  description={"Antworten zu Duschrinnen, Versandkosten, Lieferzeit, Zahlung, Widerruf und typischen Shop-Fragen."}
+  page={"faq"}
+  ogTitle={"FAQ | Duschrinnen Profi"}
+  ogDescription={"Antworten zu Duschrinnen, Versandkosten, Lieferzeit, Zahlung, Widerruf und typischen Shop-Fragen."}
+>
+  <main id="main" set:html={mainContent}></main>
+</BaseLayout>

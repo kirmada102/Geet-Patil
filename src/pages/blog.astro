@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mainContent from "../content/pages/blog.html?raw";
+---
+
+<BaseLayout
+  title={"Blog | Duschrinnen Profi"}
+  description={"Blog von Duschrinnen Profi mit Themen zu Duschrinnen, Einbau, Fliesenpraxis und Badplanung."}
+  page={"blog"}
+  ogTitle={"Blog | Duschrinnen Profi"}
+  ogDescription={"Blog von Duschrinnen Profi mit Themen zu Duschrinnen, Einbau, Fliesenpraxis und Badplanung."}
+>
+  <main id="main" set:html={mainContent}></main>
+</BaseLayout>

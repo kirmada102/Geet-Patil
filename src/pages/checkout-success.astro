@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mainContent from "../content/pages/checkout-success.html?raw";
+---
+
+<BaseLayout
+  title={"Bestellung erfolgreich | Duschrinnen Profi"}
+  description={"Bestellbestätigung für Duschrinnen Profi mit sicheren Zahlungs- und Kontaktinformationen."}
+  page={"checkout"}
+  ogTitle={"Bestellung erfolgreich | Duschrinnen Profi"}
+  ogDescription={"Bestellbestätigung für Duschrinnen Profi mit sicheren Zahlungs- und Kontaktinformationen."}
+>
+  <main id="main" set:html={mainContent}></main>
+</BaseLayout>
