@@ -2,6 +2,7 @@
 .swift-module-cache/
 node_modules/
 .astro/
+.wrangler/
 .next/
 out/
 dist/

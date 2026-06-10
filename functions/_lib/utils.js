@@ -35,6 +35,19 @@ export function ensureEnv(env, keys) {
   }
 }
 
+export function getSupabaseBaseUrl(env) {
+  ensureEnv(env, ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]);
+
+  return String(env.SUPABASE_URL || "")
+    .trim()
+    .replace(/\/+$/g, "")
+    .replace(/\/rest\/v1$/i, "");
+}
+
+function getSupabaseRestUrl(env, table) {
+  return `${getSupabaseBaseUrl(env)}/rest/v1/${table}`;
+}
+
 export function getClientMeta(request) {
   const cf = request.cf || {};
   return {
@@ -68,9 +81,7 @@ export function toCurrencyAmount(value) {
 }
 
 export async function insertSupabase(env, table, payload) {
-  ensureEnv(env, ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]);
-
-  const response = await fetch(`${env.SUPABASE_URL}/rest/v1/${table}`, {
+  const response = await fetch(getSupabaseRestUrl(env, table), {
     method: "POST",
     headers: {
       apikey: env.SUPABASE_SERVICE_ROLE_KEY,
@@ -89,9 +100,7 @@ export async function insertSupabase(env, table, payload) {
 }
 
 export async function upsertSupabase(env, table, payload, onConflict) {
-  ensureEnv(env, ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]);
-
-  const response = await fetch(`${env.SUPABASE_URL}/rest/v1/${table}?on_conflict=${encodeURIComponent(onConflict)}`, {
+  const response = await fetch(`${getSupabaseRestUrl(env, table)}?on_conflict=${encodeURIComponent(onConflict)}`, {
     method: "POST",
     headers: {
       apikey: env.SUPABASE_SERVICE_ROLE_KEY,
@@ -110,8 +119,7 @@ export async function upsertSupabase(env, table, payload, onConflict) {
 }
 
 export async function updateSupabase(env, table, filters, payload) {
-  ensureEnv(env, ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]);
-  const url = new URL(`${env.SUPABASE_URL}/rest/v1/${table}`);
+  const url = new URL(getSupabaseRestUrl(env, table));
 
   Object.entries(filters).forEach(([key, value]) => {
     url.searchParams.set(key, `eq.${value}`);
@@ -136,8 +144,7 @@ export async function updateSupabase(env, table, filters, payload) {
 }
 
 export async function selectSupabase(env, table, query = {}) {
-  ensureEnv(env, ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]);
-  const url = new URL(`${env.SUPABASE_URL}/rest/v1/${table}`);
+  const url = new URL(getSupabaseRestUrl(env, table));
 
   Object.entries(query).forEach(([key, value]) => {
     url.searchParams.set(key, value);
@@ -158,8 +165,7 @@ export async function selectSupabase(env, table, query = {}) {
 }
 
 export async function countSupabase(env, table, query = {}) {
-  ensureEnv(env, ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]);
-  const url = new URL(`${env.SUPABASE_URL}/rest/v1/${table}`);
+  const url = new URL(getSupabaseRestUrl(env, table));
 
   Object.entries({
     select: "id",
@@ -187,9 +193,7 @@ export async function countSupabase(env, table, query = {}) {
 }
 
 export async function getSupabaseUser(env, accessToken) {
-  ensureEnv(env, ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]);
-
-  const response = await fetch(`${env.SUPABASE_URL}/auth/v1/user`, {
+  const response = await fetch(`${getSupabaseBaseUrl(env)}/auth/v1/user`, {
     headers: {
       apikey: env.SUPABASE_SERVICE_ROLE_KEY,
       Authorization: `Bearer ${accessToken}`

@@ -720,7 +720,15 @@
     Object.assign(translations[language], adminTranslations[language]);
   });
 
+  function normalizeSupabaseUrl(value) {
+    return String(value || "")
+      .trim()
+      .replace(/\/+$/g, "")
+      .replace(/\/rest\/v1$/i, "");
+  }
+
   const siteConfig = window.__SITE_CONFIG__ || {};
+  siteConfig.supabaseUrl = normalizeSupabaseUrl(siteConfig.supabaseUrl);
   const products = Array.isArray(siteConfig.products) ? siteConfig.products : [];
   const productLookup = products.reduce(function (accumulator, product) {
     accumulator[product.title] = product;

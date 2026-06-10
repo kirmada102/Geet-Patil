@@ -40,6 +40,8 @@ Add these in the Cloudflare Pages project settings before testing live checkout 
 - `STRIPE_SECRET_KEY`
 - `STRIPE_WEBHOOK_SECRET`
 
+Use the Supabase project root for both Supabase URL variables, for example `https://your-project.supabase.co`. Do not use the `/rest/v1` Data API URL in Cloudflare.
+
 The full backend setup, database schema, and Stripe webhook steps are documented in [BACKEND-SETUP.md](./BACKEND-SETUP.md).
 
 ## Option 1: Connect a Git repository
