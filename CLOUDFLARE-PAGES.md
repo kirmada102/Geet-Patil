@@ -1,10 +1,21 @@
-# Cloudflare Pages Deployment
+# Cloudflare Deployment
 
-This Astro project builds to a static `dist/` folder and uses Cloudflare Pages Functions from the `functions/` directory for checkout, contact, analytics, and account routes.
+This Astro project builds to a static `dist/` folder. The included `wrangler.jsonc` tells Cloudflare Workers to deploy that folder as static assets.
 
-## Build settings
+## Workers build settings
 
-Use these values in Cloudflare Pages:
+Use these values when Cloudflare shows `Build command`, `Deploy command`, and `Path` fields:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Non-production branch deploy command: `npx wrangler versions upload`
+- Path: `/`
+
+The deploy command uses `wrangler.jsonc`, so you do not need a separate build output directory field in this Workers screen.
+
+## Pages build settings
+
+If you create a Cloudflare Pages project instead of a Workers project, use:
 
 - Framework preset: `Astro`
 - Build command: `npm run build`

@@ -19,7 +19,8 @@
   ],
   "license": "UNLICENSED",
   "devDependencies": {
-    "astro": "^6.3.7"
+    "astro": "^6.3.7",
+    "wrangler": "^4.99.0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.1"
