@@ -3,7 +3,6 @@ import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SearchModal from "../components/SearchModal.astro";
 import { products } from "../shared/catalog.js";
-import mainScriptUrl from "../scripts/main.js?url";
 
 const {
   title,
@@ -80,7 +79,9 @@ const canonicalUrl = new URL(Astro.url.pathname, metaBase).toString();
         products
       })};`}
     ></script>
-    <script type="module" src={mainScriptUrl}></script>
+    <script>
+      import "../scripts/main.js";
+    </script>
   </head>
   <body data-page={page}>
     <a class="skip-link" href="#main">Zum Inhalt springen</a>

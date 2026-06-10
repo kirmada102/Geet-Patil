@@ -1,3 +1,5 @@
+import { createClient as createSupabaseClient } from "@supabase/supabase-js";
+
 (function () {
   const CART_STORAGE_KEY = "duschrinnen-cart";
   const siteLinks = [
@@ -736,7 +738,6 @@
   }, {});
   const hasSupabaseConfig = Boolean(siteConfig.supabaseUrl && siteConfig.supabaseAnonKey);
   let supabaseClient = null;
-  let supabaseClientPromise = null;
 
   let currentLanguage = getSavedLanguage();
   let cartCount = 0;
@@ -802,26 +803,15 @@
       return supabaseClient;
     }
 
-    if (!supabaseClientPromise) {
-      supabaseClientPromise = import("@supabase/supabase-js")
-        .then(function (module) {
-          supabaseClient = module.createClient(siteConfig.supabaseUrl, siteConfig.supabaseAnonKey, {
-            auth: {
-              persistSession: true,
-              autoRefreshToken: true,
-              detectSessionInUrl: true
-            }
-          });
+    supabaseClient = createSupabaseClient(siteConfig.supabaseUrl, siteConfig.supabaseAnonKey, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true
+      }
+    });
 
-          return supabaseClient;
-        })
-        .catch(function (error) {
-          supabaseClientPromise = null;
-          throw error;
-        });
-    }
-
-    return supabaseClientPromise;
+    return supabaseClient;
   }
 
   function renderIcons() {
