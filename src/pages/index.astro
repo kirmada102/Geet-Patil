@@ -211,13 +211,8 @@ const projects = [
     category: "Ergonomic Engineering",
     year: "2022",
     team: "Head of Design Department",
-    fit: "contain",
-    images: [
-      {
-        src: assetPath("/hudson/images/projects/hpvc.png"),
-        alt: "ASME HPVC Human Powered Vehicle Challenge logo"
-      }
-    ],
+    fit: "black",
+    images: [],
     description:
       "Led design collaboration for a highly ergonomic bicycle that reduced drag, increased efficiency, and ranked 1st all over India in Design and Innovation Engineering."
   }
@@ -418,8 +413,10 @@ const projects = [
                           />
                         ))}
                       </div>
-                    ) : (
+                    ) : project.images.length === 1 ? (
                       <img src={project.images[0].src} alt={project.images[0].alt} loading="lazy" />
+                    ) : (
+                      <div class="geet-project-black-thumb" aria-hidden="true"></div>
                     )}
                   </div>
                   <div class="entry__info">

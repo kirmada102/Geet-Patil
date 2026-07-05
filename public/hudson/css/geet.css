@@ -110,7 +110,8 @@
 
 .geet-project-entry .entry__thumb > img,
 .geet-project-slider,
-.geet-project-slide {
+.geet-project-slide,
+.geet-project-black-thumb {
     width: 100%;
     height: 100%;
 }
@@ -129,6 +130,11 @@
 .geet-project-entry--contain .entry__thumb > img,
 .geet-project-entry--contain .geet-project-slide {
     object-fit: contain;
+}
+
+.geet-project-entry--black .entry__thumb,
+.geet-project-black-thumb {
+    background-color: #050505;
 }
 
 .geet-project-slider {
