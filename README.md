@@ -21,4 +21,4 @@ Production build:
 npm run build
 ```
 
-The source stays private in `kirmada102/Geet-Patil`. The generated `dist/` files are published to the public GitHub Pages repository `kirmada102/kirmada102.github.io`.
+The source stays private in `kirmada102/Geet-Patil`. The generated `dist/` files are published to the public GitHub Pages repository `kirmada102/kirmada102.github.io`, which serves the portfolio from the root URL.

@@ -17,11 +17,16 @@
         if (!preloader) return;
 
         html.classList.add('ss-preload');
-        
-        window.addEventListener('load', function() {
+
+        let siteShown = false;
+
+        const showSite = function() {
+            if (siteShown) return;
+            siteShown = true;
+
             html.classList.remove('ss-preload');
             html.classList.add('ss-loaded');
-            
+
             preloader.addEventListener('transitionend', function afterTransition(e) {
                 if (e.target.matches('#preloader'))  {
                     siteBody.classList.add('ss-show');
@@ -29,7 +34,19 @@
                     preloader.removeEventListener(e.type, afterTransition);
                 }
             });
-        });
+
+            setTimeout(function() {
+                siteBody.classList.add('ss-show');
+                preloader.style.display = 'none';
+            }, 1800);
+        };
+
+        if (document.readyState === 'complete') {
+            showSite();
+        } else {
+            window.addEventListener('load', showSite, { once: true });
+            setTimeout(showSite, 3500);
+        }
 
     }; // end ssPreloader
 
