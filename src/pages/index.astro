@@ -11,6 +11,7 @@ const highlights = [
 const experiences = [
   {
     company: "MedX",
+    url: "https://www.forschmedx.com/",
     role: "Product Manager",
     period: "Nov 2022 - Present",
     details: [
@@ -22,6 +23,7 @@ const experiences = [
   },
   {
     company: "Valeo",
+    url: "https://www.valeo.com/",
     role: "Work Student - Simulation Engineer",
     period: "Jan 2024 - Feb 2025",
     details: [
@@ -33,6 +35,7 @@ const experiences = [
   },
   {
     company: "UpGrad",
+    url: "https://www.upgrad.com/",
     role: "Business Development Executive",
     period: "May 2022 - Oct 2022",
     details: [
@@ -70,6 +73,45 @@ const education = [
   }
 ];
 
+const internships = [
+  {
+    year: "2021",
+    role: "Mechanical Engineering Intern",
+    company: "Vedant Engineering",
+    period: "May 2021 - Jul 2021",
+    location: "Pune, India",
+    details: [
+      "Supported CAD modeling and simulation workflows for automotive component material testing.",
+      "Prepared engineering models, documentation inputs, and test-support notes for structured validation work.",
+      "Built practical exposure to mechanical design review, material behavior, and manufacturing-oriented problem solving."
+    ]
+  },
+  {
+    year: "2020",
+    role: "Design Engineering Intern",
+    company: "Forschene Pvt. Ltd.",
+    period: "Jun 2020 - Aug 2020",
+    location: "Mumbai, India",
+    details: [
+      "Worked on 3D design and prototyping for mechanical and medical device concepts.",
+      "Supported concept iteration, CAD refinement, and prototype-focused design documentation.",
+      "Strengthened early product development thinking across usability, manufacturability, and technical feasibility."
+    ]
+  },
+  {
+    year: "2019",
+    role: "Marketing & Volunteering Intern",
+    company: "DUFE",
+    period: "May 2019 - Jul 2019",
+    location: "Dalian, China",
+    details: [
+      "Contributed to student-led international marketing campaigns and cultural exchange projects.",
+      "Supported outreach, coordination, and communication activities in a cross-cultural university environment.",
+      "Built early experience in storytelling, stakeholder engagement, and community-facing execution."
+    ]
+  }
+];
+
 const projects = [
   {
     title: "Orenva Health AI Layer Project",
@@ -77,11 +119,20 @@ const projects = [
     year: "2026",
     team: "Personal project with a team of 10",
     link: "https://orenvahealth.com",
+    linkLabel: "Visit orenvahealth.com",
     fit: "contain",
     images: [
       {
-        src: assetPath("/hudson/images/projects/orenva.png"),
-        alt: "Orenva pre-seed project logo on a purple background"
+        src: assetPath("/hudson/images/projects/orenva-01.png"),
+        alt: "Orenva logo on a purple gradient background"
+      },
+      {
+        src: assetPath("/hudson/images/projects/orenva-02.png"),
+        alt: "Orenva health workflow illustration connecting patient and doctor support"
+      },
+      {
+        src: assetPath("/hudson/images/projects/orenva-03.png"),
+        alt: "Orenva AI health layer flow showing user data, risk analysis, and doctor support"
       }
     ],
     description:
@@ -96,7 +147,7 @@ const projects = [
     images: [
       {
         src: assetPath("/hudson/images/projects/eco-eats.png"),
-        alt: "Eco Eats app user flow with mobile screens and sustainability features"
+        alt: "Eco Eats app flow with restaurant sustainability screens and waste reduction features"
       }
     ],
     description:
@@ -107,6 +158,8 @@ const projects = [
     category: "Infrastructure Planning",
     year: "2024",
     team: "Structured development and sustainable matrix planning",
+    link: "https://www.kesu.org/",
+    linkLabel: "Visit kesu.org",
     fit: "cover",
     images: [
       {
@@ -122,7 +175,9 @@ const projects = [
     category: "Medical Device",
     year: "2022 - 2026",
     team: "Class B automated secretion management system",
-    fit: "contain",
+    link: "https://www.forschmedx.com/",
+    linkLabel: "Visit ForschMedX",
+    fit: "cover",
     images: [
       {
         src: assetPath("/hudson/images/projects/trachease-01.jpg"),
@@ -218,6 +273,7 @@ const projects = [
               <li class="current"><a class="smoothscroll" href="#intro">Intro</a></li>
               <li><a class="smoothscroll" href="#about">About</a></li>
               <li><a class="smoothscroll" href="#works">Projects</a></li>
+              <li><a class="smoothscroll" href="#internships">Internships</a></li>
               <li><a class="smoothscroll" href="#footer">Contact</a></li>
             </ul>
           </nav>
@@ -294,7 +350,7 @@ const projects = [
                   <ul class="s-about__list geet-experience-list">
                     {experiences.map((item) => (
                       <li class="geet-experience-item">
-                        {item.company}
+                        <a class="geet-company-link" href={item.url} target="_blank" rel="noreferrer">{item.company}</a>
                         <span>{item.role} | {item.period}</span>
                         <ul class="geet-experience-details">
                           {item.details.map((detail) => (
@@ -352,7 +408,7 @@ const projects = [
                 >
                   <div class="entry__thumb">
                     {project.images.length > 1 ? (
-                      <div class="geet-project-slider" aria-label={`${project.title} image slide`}>
+                      <div class={`geet-project-slider geet-project-slider--${project.images.length}`} aria-label={`${project.title} image slide`}>
                         {project.images.map((image, slideIndex) => (
                           <img
                             class={`geet-project-slide geet-project-slide-${slideIndex + 1}`}
@@ -376,7 +432,35 @@ const projects = [
                   <h3>{project.title}</h3>
                   <p class="geet-project-team">{project.team}</p>
                   <p>{project.description}</p>
-                  {project.link && <a class="geet-project-link" href={project.link} target="_blank" rel="noreferrer">Visit orenvahealth.com</a>}
+                  {project.link && <a class="geet-project-link" href={project.link} target="_blank" rel="noreferrer">{project.linkLabel}</a>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="internships" class="s-internships target-section">
+          <div class="row">
+            <div class="column xl-12">
+              <div class="section-header" data-num="03">
+                <h2 class="text-display-title">Internships.</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="row geet-internship-timeline">
+            {internships.map((item) => (
+              <div class="column lg-4 md-6 tab-12 geet-internship-card">
+                <div class="geet-internship-card__inner">
+                  <p class="geet-internship-year">{item.year}</p>
+                  <h3>{item.role}</h3>
+                  <p class="geet-internship-meta">{item.company} | {item.period}</p>
+                  <p class="geet-internship-location">{item.location}</p>
+                  <ul>
+                    {item.details.map((detail) => (
+                      <li>{detail}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -404,7 +488,7 @@ const projects = [
       <footer id="footer" class="s-footer target-section">
         <div class="row">
           <div class="column lg-12">
-            <div class="section-header light-on-dark" data-num="03">
+            <div class="section-header light-on-dark" data-num="04">
               <h2 class="text-display-title">Get In Touch.</h2>
             </div>
           </div>

@@ -59,6 +59,18 @@
     margin-bottom: 0;
 }
 
+.geet-company-link {
+    color: var(--color-text-dark) !important;
+    border-bottom: 1px solid rgba(215, 71, 36, 0.35);
+    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.geet-company-link:focus,
+.geet-company-link:hover {
+    color: var(--color-1) !important;
+    border-color: var(--color-1);
+}
+
 .geet-experience-details {
     list-style: none;
     margin: var(--vspace-0_5) 0 0;
@@ -124,33 +136,113 @@
 }
 
 .geet-project-slide {
-    animation: geetProjectSlide 7s infinite;
     inset: 0;
     opacity: 0;
     position: absolute;
+}
+
+.geet-project-slider--2 .geet-project-slide-1 {
+    animation: geetProjectSlideTwoFirst 7s infinite;
+}
+
+.geet-project-slider--2 .geet-project-slide-2 {
+    animation: geetProjectSlideTwoSecond 7s infinite;
+}
+
+.geet-project-slider--3 .geet-project-slide-1 {
+    animation: geetProjectSlideThreeFirst 10.5s infinite;
+}
+
+.geet-project-slider--3 .geet-project-slide-2 {
+    animation: geetProjectSlideThreeSecond 10.5s infinite;
+}
+
+.geet-project-slider--3 .geet-project-slide-3 {
+    animation: geetProjectSlideThreeThird 10.5s infinite;
 }
 
 .geet-project-slide-1 {
     opacity: 1;
 }
 
-.geet-project-slide-2 {
-    animation-delay: 3.5s;
-}
-
-@keyframes geetProjectSlide {
+@keyframes geetProjectSlideTwoFirst {
     0%,
-    45% {
+    46% {
         opacity: 1;
     }
 
-    50%,
-    95% {
+    54%,
+    96% {
         opacity: 0;
     }
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes geetProjectSlideTwoSecond {
+    0%,
+    46% {
+        opacity: 0;
+    }
+
+    54%,
+    96% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes geetProjectSlideThreeFirst {
+    0%,
+    28% {
+        opacity: 1;
+    }
+
+    34%,
+    94% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes geetProjectSlideThreeSecond {
+    0%,
+    28% {
+        opacity: 0;
+    }
+
+    34%,
+    61% {
+        opacity: 1;
+    }
+
+    67%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes geetProjectSlideThreeThird {
+    0%,
+    61% {
+        opacity: 0;
+    }
+
+    67%,
+    94% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -191,6 +283,81 @@
 
 .s-footer .link-list li {
     color: var(--color-gray-15);
+}
+
+.s-internships {
+    padding-top: var(--vspace-6);
+    padding-bottom: var(--vspace-5);
+}
+
+.geet-internship-timeline {
+    margin-top: var(--vspace-1);
+}
+
+.geet-internship-card {
+    margin-bottom: var(--vspace-1);
+}
+
+.geet-internship-card__inner {
+    height: 100%;
+    padding: var(--vspace-1);
+    background-color: var(--color-gray-2);
+    border-top: 3px solid var(--color-1);
+}
+
+.geet-internship-card h3 {
+    font-family: var(--font-1);
+    font-size: calc(var(--text-size) * 1.05);
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: var(--vspace-0_375);
+}
+
+.geet-internship-year {
+    color: var(--color-1);
+    font-family: var(--font-1);
+    font-size: calc(var(--text-size) * 0.85);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    margin-bottom: var(--vspace-0_5);
+    text-transform: uppercase;
+}
+
+.geet-internship-meta,
+.geet-internship-location {
+    color: var(--color-text-light);
+    font-family: var(--font-1);
+    font-size: calc(var(--text-size) * 0.78);
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: var(--vspace-0_375);
+}
+
+.geet-internship-card ul {
+    list-style: none;
+    margin: var(--vspace-0_75) 0 0;
+    padding: 0;
+}
+
+.geet-internship-card li {
+    color: var(--color-text);
+    font-size: calc(var(--text-size) * 0.82);
+    line-height: 1.6;
+    margin-bottom: var(--vspace-0_375);
+    padding-left: 1.35rem;
+    position: relative;
+}
+
+.geet-internship-card li::before {
+    content: "";
+    width: 0.42rem;
+    height: 0.42rem;
+    background-color: var(--color-1);
+    border-radius: 50%;
+    position: absolute;
+    top: 0.75em;
+    left: 0;
 }
 
 @media screen and (max-width: 1080px) {
