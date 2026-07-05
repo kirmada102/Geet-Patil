@@ -5,7 +5,7 @@ Hudson-inspired Astro portfolio for Geet Patil.
 Website:
 
 ```text
-https://kirmada102.github.io/Geet-Patil/
+https://kirmada102.github.io/
 ```
 
 Development:
@@ -21,4 +21,4 @@ Production build:
 npm run build
 ```
 
-GitHub Pages deploys the generated `dist/` folder through `.github/workflows/pages.yml`.
+The source stays private in `kirmada102/Geet-Patil`. The generated `dist/` files are published to the public GitHub Pages repository `kirmada102/kirmada102.github.io`.
