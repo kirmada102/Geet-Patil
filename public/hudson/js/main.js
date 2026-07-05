@@ -317,6 +317,96 @@
     }; // end ssMoveTo
 
 
+   /* text reveal
+    * ------------------------------------------------------ */
+    const ssTextReveal = function() {
+
+        const revealItems = document.querySelectorAll('.section-header, .attention-getter, .s-about__block, .geet-project-copy, .geet-internship-card, .counter-items__item');
+        if (!revealItems.length) return;
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+            revealItems.forEach(function(item) {
+                item.classList.add('is-visible');
+            });
+            return;
+        }
+
+        revealItems.forEach(function(item) {
+            item.classList.add('geet-reveal');
+        });
+
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            });
+        }, {
+            rootMargin: '0px 0px -12% 0px',
+            threshold: 0.16
+        });
+
+        revealItems.forEach(function(item) {
+            revealObserver.observe(item);
+        });
+
+    }; // end ssTextReveal
+
+
+   /* counters
+    * ------------------------------------------------------ */
+    const ssCounters = function() {
+
+        const counters = document.querySelectorAll('.geet-count-value[data-count]');
+        if (!counters.length) return;
+
+        const runCounter = function(counter) {
+            if (counter.dataset.counted === 'true') return;
+            counter.dataset.counted = 'true';
+
+            const target = Number(counter.dataset.count || 0);
+            const duration = 1400;
+            const startTime = performance.now();
+
+            const tick = function(now) {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                counter.textContent = Math.round(target * eased).toString();
+
+                if (progress < 1) {
+                    requestAnimationFrame(tick);
+                } else {
+                    counter.textContent = target.toString();
+                }
+            };
+
+            requestAnimationFrame(tick);
+        };
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+            counters.forEach(function(counter) {
+                counter.textContent = counter.dataset.count;
+            });
+            return;
+        }
+
+        const counterObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.querySelectorAll('.geet-count-value[data-count]').forEach(runCounter);
+                observer.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll('.counter-items__item').forEach(function(item) {
+            counterObserver.observe(item);
+        });
+
+    }; // end ssCounters
+
+
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
@@ -329,6 +419,8 @@
         ssSwiper();
         ssAlertBoxes();
         ssMoveTo();
+        ssTextReveal();
+        ssCounters();
 
     })();
 

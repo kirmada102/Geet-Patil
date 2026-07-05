@@ -40,6 +40,46 @@
     object-position: center center;
 }
 
+.geet-word-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(0.55em);
+}
+
+.ss-show .geet-word-line {
+    animation: geetWordLoad 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.ss-show .geet-word-line:nth-child(1) {
+    animation-delay: 0.45s;
+}
+
+.ss-show .geet-word-line:nth-child(2) {
+    animation-delay: 0.62s;
+}
+
+.ss-show .geet-word-line:nth-child(3) {
+    animation-delay: 0.79s;
+}
+
+@keyframes geetWordLoad {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.geet-reveal {
+    opacity: 0;
+    transform: translateY(2.4rem);
+    transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.geet-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .geet-skill-list {
     columns: 2;
     column-gap: var(--vspace-1);
@@ -125,6 +165,10 @@
 .geet-project-entry--cover .entry__thumb > img,
 .geet-project-entry--cover .geet-project-slide {
     object-fit: cover;
+}
+
+.geet-project-entry--cover .entry__thumb > img {
+    object-position: center center;
 }
 
 .geet-project-entry--contain .entry__thumb > img,
@@ -366,6 +410,16 @@
     left: 0;
 }
 
+.counter-items .geet-count-value {
+    font-size: 1em;
+    margin-left: 0;
+}
+
+.counter-items .geet-count-suffix {
+    font-size: 0.5em;
+    margin-left: 0.1em;
+}
+
 @media screen and (max-width: 1080px) {
     .geet-intro-media::before {
         background: rgba(0, 0, 0, 0.45);
@@ -426,6 +480,17 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .geet-word-line,
+    .geet-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .ss-show .geet-word-line {
+        animation: none;
+    }
+
     .geet-project-slide {
         animation: none;
     }

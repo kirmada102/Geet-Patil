@@ -3,9 +3,9 @@ const assetPath = (path) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}${pat
 
 const highlights = [
   { value: "4", suffix: "+", label: "Years of product, engineering, and growth experience" },
-  { value: "10", suffix: "+", label: "Patented medical device concepts managed" },
+  { value: "30", suffix: "+", label: "Devices managed, designed, developed, launched, financially validated, and marketed" },
   { value: "300", suffix: "+", label: "FEA, FEM, and CFD simulations delivered" },
-  { value: "6", suffix: "", label: "Portfolio projects across healthtech, sustainability, and mobility" }
+  { value: "10", suffix: "+", label: "Portfolio projects across healthtech, sustainability, and mobility" }
 ];
 
 const experiences = [
@@ -59,17 +59,26 @@ const skills = [
   "ANSYS",
   "Nastran",
   "Stakeholder Management",
-  "Design Thinking"
+  "Design Thinking",
+  "ISO 13485 QMS - Medical Devices",
+  "ISO 9001",
+  "Python",
+  "Documentation",
+  "Product Roadmap",
+  "PLM",
+  "SolidWorks"
 ];
 
 const education = [
   {
     school: "THWS",
-    detail: "MBA, Management of Business Transformation - 2025"
+    detail: "MBA, Management of Business Transformation - 2025",
+    location: "Schweinfurt, Germany"
   },
   {
     school: "NMIMS",
-    detail: "B.Tech, Mechanical Engineering - 2022"
+    detail: "B.Tech, Mechanical Engineering - 2022",
+    location: "Mumbai, India"
   }
 ];
 
@@ -120,7 +129,7 @@ const projects = [
     team: "Personal project with a team of 10",
     link: "https://orenvahealth.com",
     linkLabel: "Visit orenvahealth.com",
-    fit: "contain",
+    fit: "cover",
     images: [
       {
         src: assetPath("/hudson/images/projects/orenva-01.png"),
@@ -143,7 +152,7 @@ const projects = [
     category: "Sustainable Business",
     year: "2025",
     team: "MBA design thinking project with a team of 5",
-    fit: "contain",
+    fit: "cover",
     images: [
       {
         src: assetPath("/hudson/images/projects/eco-eats.png"),
@@ -282,9 +291,9 @@ const projects = [
               <div class="s-intro__content-text">
                 <div class="s-intro__content-pretitle text-pretitle">Hello, I am Geet</div>
                 <h1 class="s-intro__content-title">
-                  Product manager <br />
-                  building healthtech, <br />
-                  AI, and sustainable systems.
+                  <span class="geet-word-line">Product manager</span>
+                  <span class="geet-word-line">building healthtech,</span>
+                  <span class="geet-word-line">AI, and sustainable systems.</span>
                 </h1>
                 <div class="s-intro__content-btns">
                   <a class="smoothscroll btn" href="#about">More About Me</a>
@@ -364,6 +373,7 @@ const projects = [
                       <li>
                         {item.school}
                         <span>{item.detail}</span>
+                        <span class="geet-education-location">{item.location}</span>
                       </li>
                     ))}
                   </ul>
@@ -468,9 +478,9 @@ const projects = [
           <div class="row counter-items">
             {highlights.map((item) => (
               <div class="column counter-items__item">
-                <div class="num">
-                  {item.value}
-                  {item.suffix && <span>{item.suffix}</span>}
+                <div class="num" aria-label={`${item.value}${item.suffix} ${item.label}`}>
+                  <span class="geet-count-value" data-count={item.value}>0</span>
+                  {item.suffix && <span class="geet-count-suffix">{item.suffix}</span>}
                 </div>
                 <h5>{item.label}</h5>
                 <p>
@@ -533,14 +543,14 @@ const projects = [
           <div class="column xl-6 lg-12">
             <ul class="s-footer__social social-list">
               <li><a href="https://www.linkedin.com/in/GeetPatil" target="_blank" rel="noreferrer"><span class="geet-social-text geet-social-text-footer">in</span><span class="u-screen-reader-text">LinkedIn</span></a></li>
-              <li><a href="https://github.com/kirmada102" target="_blank" rel="noreferrer"><span class="geet-social-text geet-social-text-footer">gh</span><span class="u-screen-reader-text">GitHub</span></a></li>
+              <li><a href="#footer"><span class="geet-social-text geet-social-text-footer">de</span><span class="u-screen-reader-text">Germany</span></a></li>
             </ul>
           </div>
 
           <div class="column xl-6 lg-12">
             <p class="ss-copyright">
               <span>© 2026 Geet Patil</span>
-              <span>Design by <a href="https://styleshout.com/" target="_blank" rel="noreferrer">StyleShout</a> Distribution by <a href="https://themewagon.com" target="_blank" rel="noreferrer">ThemeWagon</a></span>
+              <span>Design by <a href="https://github.com/kirmada102" target="_blank" rel="noreferrer">Geet Patil (kirmada102)</a></span>
             </p>
           </div>
         </div>
