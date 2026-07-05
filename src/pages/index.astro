@@ -1,4 +1,6 @@
 ---
+const assetPath = (path) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}${path}`;
+
 const highlights = [
   { value: "4", suffix: "+", label: "Years of product, engineering, and growth experience" },
   { value: "10", suffix: "+", label: "Patented medical device concepts managed" },
@@ -78,7 +80,7 @@ const projects = [
     fit: "contain",
     images: [
       {
-        src: "/hudson/images/projects/orenva.png",
+        src: assetPath("/hudson/images/projects/orenva.png"),
         alt: "Orenva pre-seed project logo on a purple background"
       }
     ],
@@ -93,7 +95,7 @@ const projects = [
     fit: "contain",
     images: [
       {
-        src: "/hudson/images/projects/eco-eats.png",
+        src: assetPath("/hudson/images/projects/eco-eats.png"),
         alt: "Eco Eats app user flow with mobile screens and sustainability features"
       }
     ],
@@ -108,7 +110,7 @@ const projects = [
     fit: "cover",
     images: [
       {
-        src: "/hudson/images/projects/kesu.jpg",
+        src: assetPath("/hudson/images/projects/kesu.jpg"),
         alt: "Children outside a school building for the KESU education support project"
       }
     ],
@@ -123,11 +125,11 @@ const projects = [
     fit: "contain",
     images: [
       {
-        src: "/hudson/images/projects/trachease-01.jpg",
+        src: assetPath("/hudson/images/projects/trachease-01.jpg"),
         alt: "Trachease automated secretion management device render with tubing"
       },
       {
-        src: "/hudson/images/projects/trachease-02.jpg",
+        src: assetPath("/hudson/images/projects/trachease-02.jpg"),
         alt: "Trachease device system render with controller and ventilator tubing"
       }
     ],
@@ -142,7 +144,7 @@ const projects = [
     fit: "cover",
     images: [
       {
-        src: "/hudson/images/projects/baja-sae.jpg",
+        src: assetPath("/hudson/images/projects/baja-sae.jpg"),
         alt: "BAJA SAE ATV driving on a dirt track with dust behind it"
       }
     ],
@@ -157,7 +159,7 @@ const projects = [
     fit: "contain",
     images: [
       {
-        src: "/hudson/images/projects/hpvc.png",
+        src: assetPath("/hudson/images/projects/hpvc.png"),
         alt: "ASME HPVC Human Powered Vehicle Challenge logo"
       }
     ],
@@ -181,13 +183,13 @@ const projects = [
       document.documentElement.classList.remove("no-js");
       document.documentElement.classList.add("js");
     </script>
-    <link rel="stylesheet" href="/hudson/css/vendor.css" />
-    <link rel="stylesheet" href="/hudson/css/styles.css" />
-    <link rel="stylesheet" href="/hudson/css/geet.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/hudson/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/hudson/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/hudson/favicon-16x16.png" />
-    <link rel="manifest" href="/hudson/site.webmanifest" />
+    <link rel="stylesheet" href={assetPath("/hudson/css/vendor.css")} />
+    <link rel="stylesheet" href={assetPath("/hudson/css/styles.css")} />
+    <link rel="stylesheet" href={assetPath("/hudson/css/geet.css")} />
+    <link rel="apple-touch-icon" sizes="180x180" href={assetPath("/hudson/apple-touch-icon.png")} />
+    <link rel="icon" type="image/png" sizes="32x32" href={assetPath("/hudson/favicon-32x32.png")} />
+    <link rel="icon" type="image/png" sizes="16x16" href={assetPath("/hudson/favicon-16x16.png")} />
+    <link rel="manifest" href={assetPath("/hudson/site.webmanifest")} />
   </head>
 
   <body id="top">
@@ -248,11 +250,15 @@ const projects = [
           </ul>
 
           <div class="s-intro__content-media geet-intro-media">
-            <img src="/hudson/images/geet-hero.jpg" srcset="/hudson/images/geet-hero.jpg 1x" alt="Geet Patil" />
+            <img
+              src={assetPath("/hudson/images/geet-hero.jpg")}
+              srcset={`${assetPath("/hudson/images/geet-hero.jpg")} 1x`}
+              alt="Geet Patil"
+            />
           </div>
 
           <div class="s-intro__btn-download">
-            <a class="btn btn--stroke" href="/assets/geet-patil-cv.pdf" download>Get My CV</a>
+            <a class="btn btn--stroke" href={assetPath("/assets/geet-patil-cv.pdf")} download>Get My CV</a>
           </div>
 
           <div class="s-intro__scroll-down">
@@ -438,7 +444,7 @@ const projects = [
             <a href="mailto:geetppatil3000@gmail.com" class="btn btn--primary btn--large u-fullwidth">Message Me</a>
           </div>
           <div class="column xl-6 tab-12">
-            <a href="/assets/geet-patil-cv.pdf" download class="btn btn--stroke btn--large u-fullwidth">Get My CV</a>
+            <a href={assetPath("/assets/geet-patil-cv.pdf")} download class="btn btn--stroke btn--large u-fullwidth">Get My CV</a>
           </div>
         </div>
 
@@ -467,7 +473,7 @@ const projects = [
       </footer>
     </div>
 
-    <script is:inline src="/hudson/js/plugins.js"></script>
-    <script is:inline src="/hudson/js/main.js"></script>
+    <script is:inline src={assetPath("/hudson/js/plugins.js")}></script>
+    <script is:inline src={assetPath("/hudson/js/main.js")}></script>
   </body>
 </html>
