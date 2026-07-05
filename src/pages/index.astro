@@ -1,17 +1,473 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import mainContent from "../content/pages/index.html?raw";
+const highlights = [
+  { value: "4", suffix: "+", label: "Years of product, engineering, and growth experience" },
+  { value: "10", suffix: "+", label: "Patented medical device concepts managed" },
+  { value: "300", suffix: "+", label: "FEA, FEM, and CFD simulations delivered" },
+  { value: "6", suffix: "", label: "Portfolio projects across healthtech, sustainability, and mobility" }
+];
+
+const experiences = [
+  {
+    company: "MedX",
+    role: "Product Manager",
+    period: "Nov 2022 - Present",
+    details: [
+      "Led end-to-end product lifecycle execution across roadmap planning, sprint coordination, validation support, launch readiness, and stakeholder alignment using Agile and Jira.",
+      "Built operating workflows for requirements, acceptance criteria, documentation, prioritization, and cross-functional delivery inside an early-stage founder-led startup.",
+      "Coordinated R&D, QA/RA, manufacturing, clinical, commercial, and leadership stakeholders while supporting commercialization strategy, positioning, investor planning, and $200K VC-backed funding.",
+      "Managed 10+ patented medical device concepts through feasibility, prioritization, validation planning, and execution, reducing R&D rework by 18%."
+    ]
+  },
+  {
+    company: "Valeo",
+    role: "Work Student - Simulation Engineer",
+    period: "Jan 2024 - Feb 2025",
+    details: [
+      "Delivered 300+ FEA, FEM, and CFD simulations supporting validation, feasibility reviews, performance analysis, and data-driven engineering decisions.",
+      "Used Nastran, ANSYS, CATIA V5, and CAD workflows to optimize components, reduce material usage by 20%, and support development timelines.",
+      "Developed and standardized 15+ nCode vibration test protocols, improving lifecycle validation quality and repeatable testing workflows by 25%.",
+      "Prepared technical reports, simulation findings, and validation summaries for engineering stakeholders and product decision-making."
+    ]
+  },
+  {
+    company: "UpGrad",
+    role: "Business Development Executive",
+    period: "May 2022 - Oct 2022",
+    details: [
+      "Managed 400+ B2B and B2C leads through CRM workflows, supporting pipeline visibility, customer engagement, conversion tracking, and commercial follow-up.",
+      "Improved SAP, Excel, and CRM reporting processes to track timelines, client needs, lead status, costs, and business performance indicators.",
+      "Created Excel and Power BI dashboards for forecasting, resource planning, revenue tracking, and management decision-making.",
+      "Increased client retention by 25% through structured communication, issue resolution, follow-up discipline, and stronger post-sales coordination."
+    ]
+  }
+];
+
+const skills = [
+  "Product Management",
+  "Project Management",
+  "Product Launch Planning",
+  "Jira",
+  "Power BI",
+  "SAP S/4HANA",
+  "CRM Systems",
+  "CATIA V5",
+  "ANSYS",
+  "Nastran",
+  "Stakeholder Management",
+  "Design Thinking"
+];
+
+const education = [
+  {
+    school: "THWS",
+    detail: "MBA, Management of Business Transformation - 2025"
+  },
+  {
+    school: "NMIMS",
+    detail: "B.Tech, Mechanical Engineering - 2022"
+  }
+];
+
+const projects = [
+  {
+    title: "Orenva Health AI Layer Project",
+    category: "Healthtech AI",
+    year: "2026",
+    team: "Personal project with a team of 10",
+    link: "https://orenvahealth.com",
+    fit: "contain",
+    images: [
+      {
+        src: "/hudson/images/projects/orenva.png",
+        alt: "Orenva pre-seed project logo on a purple background"
+      }
+    ],
+    description:
+      "Building an AI layer for Orenva Health to support smarter health workflows, product execution, and patient-centered digital experiences."
+  },
+  {
+    title: "Eco Eats App",
+    category: "Sustainable Business",
+    year: "2025",
+    team: "MBA design thinking project with a team of 5",
+    fit: "contain",
+    images: [
+      {
+        src: "/hudson/images/projects/eco-eats.png",
+        alt: "Eco Eats app user flow with mobile screens and sustainability features"
+      }
+    ],
+    description:
+      "Designed an app concept to help restaurants reduce carbon waste, save avoidable food wastage, reduce bio-waste, and make restaurant operations more sustainable."
+  },
+  {
+    title: "KESU - Kinda Education Support",
+    category: "Infrastructure Planning",
+    year: "2024",
+    team: "Structured development and sustainable matrix planning",
+    fit: "cover",
+    images: [
+      {
+        src: "/hudson/images/projects/kesu.jpg",
+        alt: "Children outside a school building for the KESU education support project"
+      }
+    ],
+    description:
+      "Developed an infrastructure plan to reduce pain points for children and families by improving sanitary material access, clean water management, and disease prevention."
+  },
+  {
+    title: "Trachease",
+    category: "Medical Device",
+    year: "2022 - 2026",
+    team: "Class B automated secretion management system",
+    fit: "contain",
+    images: [
+      {
+        src: "/hudson/images/projects/trachease-01.jpg",
+        alt: "Trachease automated secretion management device render with tubing"
+      },
+      {
+        src: "/hudson/images/projects/trachease-02.jpg",
+        alt: "Trachease device system render with controller and ventilator tubing"
+      }
+    ],
+    description:
+      "Automated secretion management system designed to override manual intervention, reduce caregiver burden, and help reduce ventilator-associated pneumonia risk."
+  },
+  {
+    title: "BAJA SAE Competition",
+    category: "Automotive Design",
+    year: "2021 - 2022",
+    team: "Design department leadership across 2WD and 4WD ATV builds",
+    fit: "cover",
+    images: [
+      {
+        src: "/hudson/images/projects/baja-sae.jpg",
+        alt: "BAJA SAE ATV driving on a dirt track with dust behind it"
+      }
+    ],
+    description:
+      "Designed and developed 2WD and 4WD ATVs across two competition years, competing nationally and ranking 5th all over India in Design and Innovation."
+  },
+  {
+    title: "HPVC - Human Powered Vehicle Competition",
+    category: "Ergonomic Engineering",
+    year: "2022",
+    team: "Head of Design Department",
+    fit: "contain",
+    images: [
+      {
+        src: "/hudson/images/projects/hpvc.png",
+        alt: "ASME HPVC Human Powered Vehicle Challenge logo"
+      }
+    ],
+    description:
+      "Led design collaboration for a highly ergonomic bicycle that reduced drag, increased efficiency, and ranked 1st all over India in Design and Innovation Engineering."
+  }
+];
 ---
 
-<BaseLayout
-  title={"Duschrinnen Profi | Moderne Duschrinnen, Abl&auml;ufe &amp; Fliesenzubeh&ouml;r"}
-  description={"Duschrinnen Profi f&uuml;hrt Duschrinnen, Bodenabl&auml;ufe, Ersatzteile, Duschablagen und Fliesenzubeh&ouml;r mit schneller Lieferung."}
-  page={"home"}
-  ogTitle={"Duschrinnen Profi | Badtechnik modern kaufen"}
-  ogDescription={"Duschrinnen Profi f&uuml;hrt Duschrinnen, Bodenabl&auml;ufe, Ersatzteile, Duschablagen und Fliesenzubeh&ouml;r mit schneller Lieferung."}
-  preloadImage={"/assets/original/2022-09-bg-hero-3-640.jpg"}
-  preloadSrcSet={"/assets/original/2022-09-bg-hero-3-640.jpg 640w, /assets/original/2022-09-bg-hero-3-960.jpg 960w, /assets/original/2022-09-bg-hero-3-1280.jpg 1280w"}
-  preloadSizes={"(max-width: 900px) 100vw, 52vw"}
->
-  <main id="main" set:html={mainContent}></main>
-</BaseLayout>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geet Patil | Product Manager Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Geet Patil, a product and project management professional working across healthtech, medtech, sustainability, engineering, and business transformation."
+    />
+    <script is:inline>
+      document.documentElement.classList.remove("no-js");
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="/hudson/css/vendor.css" />
+    <link rel="stylesheet" href="/hudson/css/styles.css" />
+    <link rel="stylesheet" href="/hudson/css/geet.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/hudson/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/hudson/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/hudson/favicon-16x16.png" />
+    <link rel="manifest" href="/hudson/site.webmanifest" />
+  </head>
+
+  <body id="top">
+    <div id="preloader">
+      <div id="loader" class="dots-fade">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div id="page" class="s-pagewrap">
+      <header class="s-header">
+        <div class="row s-header__inner">
+          <div class="s-header__block">
+            <div class="s-header__logo">
+              <a class="logo geet-logo" href="#top" aria-label="Geet Patil home">
+                <span>Geet Patil</span>
+              </a>
+            </div>
+            <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+          </div>
+
+          <nav class="s-header__nav">
+            <ul class="s-header__menu-links">
+              <li class="current"><a class="smoothscroll" href="#intro">Intro</a></li>
+              <li><a class="smoothscroll" href="#about">About</a></li>
+              <li><a class="smoothscroll" href="#works">Projects</a></li>
+              <li><a class="smoothscroll" href="#footer">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section id="intro" class="s-intro target-section">
+          <div class="row s-intro__content width-sixteen-col">
+            <div class="column lg-12 s-intro__content-inner grid-block grid-16">
+              <div class="s-intro__content-text">
+                <div class="s-intro__content-pretitle text-pretitle">Hello, I am Geet</div>
+                <h1 class="s-intro__content-title">
+                  Product manager <br />
+                  building healthtech, <br />
+                  AI, and sustainable systems.
+                </h1>
+                <div class="s-intro__content-btns">
+                  <a class="smoothscroll btn" href="#about">More About Me</a>
+                  <a class="smoothscroll btn btn--stroke" href="#footer">Get In Touch</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="s-intro__social social-list">
+            <li><a href="https://www.linkedin.com/in/GeetPatil" target="_blank" rel="noreferrer"><span class="geet-social-text">in</span><span class="u-screen-reader-text">LinkedIn</span></a></li>
+            <li><a href="https://github.com/kirmada102" target="_blank" rel="noreferrer"><span class="geet-social-text">gh</span><span class="u-screen-reader-text">GitHub</span></a></li>
+            <li><a href="mailto:geetppatil3000@gmail.com"><span class="geet-social-text">@</span><span class="u-screen-reader-text">Email</span></a></li>
+          </ul>
+
+          <div class="s-intro__content-media geet-intro-media">
+            <img src="/hudson/images/geet-hero.jpg" srcset="/hudson/images/geet-hero.jpg 1x" alt="Geet Patil" />
+          </div>
+
+          <div class="s-intro__btn-download">
+            <a class="btn btn--stroke" href="/assets/geet-patil-cv.pdf" download>Get My CV</a>
+          </div>
+
+          <div class="s-intro__scroll-down">
+            <a href="#about" class="smoothscroll">
+              <div class="scroll-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+              </div>
+              <span class="scroll-text u-screen-reader-text">Scroll Down</span>
+            </a>
+          </div>
+        </section>
+
+        <section id="about" class="s-about target-section">
+          <div class="row s-about__content">
+            <div class="column xl-12">
+              <div class="section-header" data-num="01">
+                <h2 class="text-display-title">About Me.</h2>
+              </div>
+
+              <p class="attention-getter">
+                MBA graduate with 4+ years of experience across product management, project execution, business development, simulation engineering, and cross-functional delivery.
+                I build structured workflows, align technical and business stakeholders, and turn ambiguous product work into measurable execution.
+              </p>
+
+              <p class="attention-getter">
+                My work spans medtech product lifecycle management, AI-assisted health workflows, validation planning, commercialization, and sustainability-driven business models.
+                I am currently focused on product management, project management execution, and healthtech transformation.
+              </p>
+
+              <div class="grid-list-items s-about__blocks">
+                <div class="grid-list-items__item s-about__block geet-experience-block">
+                  <h4 class="s-about__block-title">Experience</h4>
+                  <ul class="s-about__list geet-experience-list">
+                    {experiences.map((item) => (
+                      <li class="geet-experience-item">
+                        {item.company}
+                        <span>{item.role} | {item.period}</span>
+                        <ul class="geet-experience-details">
+                          {item.details.map((detail) => (
+                            <li>{detail}</li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="grid-list-items__item s-about__block">
+                  <h4 class="s-about__block-title">Education</h4>
+                  <ul class="s-about__list">
+                    {education.map((item) => (
+                      <li>
+                        {item.school}
+                        <span>{item.detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="grid-list-items__item s-about__block">
+                  <h4 class="s-about__block-title">Skills</h4>
+                  <ul class="s-about__list geet-skill-list">
+                    {skills.map((skill) => (
+                      <li>{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="works" class="s-works target-section">
+          <div class="row">
+            <div class="column xl-12">
+              <div class="section-header" data-num="02">
+                <h2 class="text-display-title">Selected Projects.</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="row folio-entries geet-projects">
+            {projects.map((project, index) => (
+              <div class={`column entry geet-project-entry geet-project-entry--${project.fit}`}>
+                <a
+                  href={project.link || `#project-${index + 1}`}
+                  class="entry__link"
+                  target={project.link ? "_blank" : undefined}
+                  rel={project.link ? "noreferrer" : undefined}
+                  aria-label={`${project.title} project details`}
+                >
+                  <div class="entry__thumb">
+                    {project.images.length > 1 ? (
+                      <div class="geet-project-slider" aria-label={`${project.title} image slide`}>
+                        {project.images.map((image, slideIndex) => (
+                          <img
+                            class={`geet-project-slide geet-project-slide-${slideIndex + 1}`}
+                            src={image.src}
+                            alt={image.alt}
+                            loading="lazy"
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <img src={project.images[0].src} alt={project.images[0].alt} loading="lazy" />
+                    )}
+                  </div>
+                  <div class="entry__info">
+                    <h4 class="entry__title">{project.title}</h4>
+                    <div class="entry__cat">{project.category} | {project.year}</div>
+                  </div>
+                </a>
+                <div class="geet-project-copy" id={`project-${index + 1}`}>
+                  <p class="geet-project-year">{project.year}</p>
+                  <h3>{project.title}</h3>
+                  <p class="geet-project-team">{project.team}</p>
+                  <p>{project.description}</p>
+                  {project.link && <a class="geet-project-link" href={project.link} target="_blank" rel="noreferrer">Visit orenvahealth.com</a>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="numbers" class="s-numbers">
+          <div class="row counter-items">
+            {highlights.map((item) => (
+              <div class="column counter-items__item">
+                <div class="num">
+                  {item.value}
+                  {item.suffix && <span>{item.suffix}</span>}
+                </div>
+                <h5>{item.label}</h5>
+                <p>
+                  Structured execution across product, validation, engineering, and business development work.
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer id="footer" class="s-footer target-section">
+        <div class="row">
+          <div class="column lg-12">
+            <div class="section-header light-on-dark" data-num="03">
+              <h2 class="text-display-title">Get In Touch.</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row s-footer__content">
+          <div class="column xl-6 md-12 s-footer__block s-footer__about">
+            <p class="attention-getter">
+              Open to product management, project management execution, and operations roles where structured delivery, healthtech thinking, and stakeholder clarity matter.
+            </p>
+          </div>
+
+          <div class="column xl-6 md-12 s-footer__block s-footer__site-links">
+            <div class="row">
+              <div class="column xl-4 lg-5 md-6 tab-12">
+                <h5>Follow Me</h5>
+                <ul class="link-list">
+                  <li><a href="https://www.linkedin.com/in/GeetPatil" target="_blank" rel="noreferrer">LinkedIn</a></li>
+                  <li><a href="https://github.com/kirmada102" target="_blank" rel="noreferrer">GitHub</a></li>
+                  <li><a href="https://orenvahealth.com" target="_blank" rel="noreferrer">Orenva Health</a></li>
+                </ul>
+              </div>
+              <div class="column xl-6 md-6 tab-12">
+                <h5>Contact Me</h5>
+                <ul class="link-list">
+                  <li><a href="mailto:geetppatil3000@gmail.com">geetppatil3000@gmail.com</a></li>
+                  <li><a href="tel:+491745199723">+49 174 5199723</a></li>
+                  <li>Schweinfurt, Germany</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row s-footer__buttons">
+          <div class="column xl-6 tab-12">
+            <a href="mailto:geetppatil3000@gmail.com" class="btn btn--primary btn--large u-fullwidth">Message Me</a>
+          </div>
+          <div class="column xl-6 tab-12">
+            <a href="/assets/geet-patil-cv.pdf" download class="btn btn--stroke btn--large u-fullwidth">Get My CV</a>
+          </div>
+        </div>
+
+        <div class="row s-footer__bottom">
+          <div class="column xl-6 lg-12">
+            <ul class="s-footer__social social-list">
+              <li><a href="https://www.linkedin.com/in/GeetPatil" target="_blank" rel="noreferrer"><span class="geet-social-text geet-social-text-footer">in</span><span class="u-screen-reader-text">LinkedIn</span></a></li>
+              <li><a href="https://github.com/kirmada102" target="_blank" rel="noreferrer"><span class="geet-social-text geet-social-text-footer">gh</span><span class="u-screen-reader-text">GitHub</span></a></li>
+            </ul>
+          </div>
+
+          <div class="column xl-6 lg-12">
+            <p class="ss-copyright">
+              <span>© 2026 Geet Patil</span>
+              <span>Design by <a href="https://styleshout.com/" target="_blank" rel="noreferrer">StyleShout</a> Distribution by <a href="https://themewagon.com" target="_blank" rel="noreferrer">ThemeWagon</a></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="ss-go-top">
+          <a class="smoothscroll" title="Back to Top" href="#top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"></path></svg>
+          </a>
+          <span>Back To Top</span>
+        </div>
+      </footer>
+    </div>
+
+    <script is:inline src="/hudson/js/plugins.js"></script>
+    <script is:inline src="/hudson/js/main.js"></script>
+  </body>
+</html>

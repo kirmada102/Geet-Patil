@@ -1,30 +1,17 @@
-# Duschrinnen Profi Modern
+# Geet Patil Portfolio
 
-Modern Astro rebuild of the Duschrinnen Profi redesign. The site is now structured as a static Astro project with plain CSS, one shared JavaScript file, and file-based `.html` output that keeps the existing URLs intact.
+Astro portfolio website for Geet Patil, adapted from the Hudson template and tailored around product management, medtech commercialization, simulation engineering, business development, and business transformation experience.
 
 ## Stack
 
-- Astro
-- Plain CSS
-- Lightweight vanilla JavaScript
-- Cloudflare Pages Functions for backend routes
-- Stripe Checkout + Supabase Auth / data
-- Static build output in `dist/`
+- Astro static output
+- Hudson/StyleShout template structure
+- Plain CSS customizations in `public/hudson/css/geet.css`
+- Lightweight vanilla JavaScript from the Hudson template
+- Montserrat typography
+- GitHub Pages workflow in `.github/workflows/pages.yml`
 
-## Project structure
-
-- `src/layouts/BaseLayout.astro` shared page shell
-- `src/components/` shared header, footer, and search modal
-- `src/pages/` Astro routes
-- `src/content/pages/` raw HTML page fragments migrated from the old static version
-- `src/scripts/main.js` bundled frontend logic
-- `src/shared/catalog.js` shared product data for frontend and backend validation
-- `functions/` Cloudflare Pages backend routes
-- `public/styles.css` global stylesheet
-- `public/assets/` mirrored images, logo, font, and original media
-- `legacy-static/` snapshot of the pre-Astro HTML files for reference
-
-## Local development
+## Local Development
 
 Install dependencies:
 
@@ -32,7 +19,7 @@ Install dependencies:
 npm install
 ```
 
-Start the Astro dev server:
+Start the dev server:
 
 ```bash
 npm run dev
@@ -41,29 +28,38 @@ npm run dev
 Open:
 
 ```text
-http://127.0.0.1:4321/index.html
+http://127.0.0.1:4321/
 ```
 
-## Production build
+## Production Build
 
 ```bash
 npm run build
 ```
 
-The final static site is written to:
+The static site is emitted to:
 
 ```text
 dist/
 ```
 
-## Deploy options
+## Template Attribution
 
-- Cloudflare Pages: see [CLOUDFLARE-PAGES.md](./CLOUDFLARE-PAGES.md)
-- Backend setup: see [BACKEND-SETUP.md](./BACKEND-SETUP.md)
-- GitHub Pages: `.github/workflows/pages.yml` now builds Astro and publishes `dist/`
+This portfolio uses the Hudson template by StyleShout, distributed through ThemeWagon. The footer attribution is kept in place to respect the template license.
 
-## Notes
+## GitHub Connection
 
-- Routes are emitted as file-style URLs such as `about.html`, `sortiment.html`, and `checkout.html` so the existing internal links and JS logic keep working.
-- The original product, category, and guide media are preserved in `public/assets/original/`.
-- Real checkout and customer features require the environment variables and Supabase / Stripe setup from `BACKEND-SETUP.md`.
+This folder is currently connected to:
+
+```text
+origin -> https://github.com/kirmada102/DuschrinnenProfi-Modern.git
+```
+
+I did not replace `origin` with a guessed portfolio repository because the exact target repository URL was not provided. After the GitHub repository exists, connect this project with:
+
+```bash
+git remote set-url origin https://github.com/kirmada102/geet-patil-portfolio.git
+git push -u origin main
+```
+
+The included GitHub Pages workflow will build Astro and publish `dist/` on pushes to `main`.

@@ -1,28 +1,24 @@
 {
-  "name": "duschrinnen-profi-modern",
+  "name": "geet-patil-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Modern static redesign for a German bathroom fittings and shower drain storefront.",
+  "description": "Hudson-inspired portfolio website for Geet Patil.",
   "scripts": {
     "dev": "astro dev --host 0.0.0.0 --port 4321",
     "start": "astro dev --host 0.0.0.0 --port 4321",
     "build": "astro build",
-    "preview": "astro preview --host 0.0.0.0 --port 4321",
-    "preview:cloudflare": "npm run build && npx wrangler pages dev dist --compatibility-date=2026-05-23"
+    "preview": "astro preview --host 0.0.0.0 --port 4321"
   },
   "keywords": [
-    "static-site",
-    "github-pages",
-    "bathroom",
-    "ecommerce",
-    "duschrinnen"
+    "portfolio",
+    "product-management",
+    "project-management",
+    "medtech",
+    "astro",
+    "github-pages"
   ],
   "license": "UNLICENSED",
   "devDependencies": {
-    "astro": "^6.3.7",
-    "wrangler": "^4.99.0"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.106.1"
+    "astro": "^6.3.7"
   }
 }
